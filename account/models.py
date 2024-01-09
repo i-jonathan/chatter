@@ -41,8 +41,6 @@ class CustomUserManager(BaseUserManager):
 class User(AbstractUser):
     username = None
     email = models.EmailField(_("email address"), unique=True)
-    # This isn't ideal. It's just a quick way to work with users
-    # ideally this would be hashed and salted (which I might still do lol)
     api_key = models.CharField(max_length=20)
 
     USERNAME_FIELD = "email"

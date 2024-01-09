@@ -20,6 +20,8 @@ class TokenAuthMiddleware(BaseMiddleware):
 
     async def __call__(self, scope, receive, send):
         try:
+            # checks the query string for the api key to validate user when connection is made.
+            # updates the score with the current user or an anonymous user
             query = str(scope["query_string"], encoding="utf-8").split("&")
             data = {}
             for i in query:

@@ -9,6 +9,8 @@ from .models import User
 @csrf_exempt
 @require_POST
 def signup(request):
+    # create a new user account, generate an api key and send.
+    # should ideally only be displayed once to the user.
     data = json.loads(request.body)
     required = ["email", "password"]
     for i in required:

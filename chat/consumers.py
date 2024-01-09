@@ -47,7 +47,7 @@ class ChatClient(AsyncWebsocketConsumer):
 
     async def receive(self, text_data, bytes_data=None):
         current_date = datetime.now(timezone.utc)
-        # store message sent
+        # store message sent and offload updating other connections to chat_message
         message = ChatMessage(
             message=text_data,
             date_time=current_date,
