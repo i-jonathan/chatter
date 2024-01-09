@@ -1,0 +1,26 @@
+# https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chatter
+  namespace: default
+  labels:
+    app: chatter
+spec:
+  selector:
+    matchLabels:
+      app: chatter
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: chatter
+    spec:
+      containers:
+        - name: chatter
+          image: farinloyejonathan/chatter
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+              name: chatter
+      restartPolicy: Always
