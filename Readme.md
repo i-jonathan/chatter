@@ -32,7 +32,9 @@ Server IP would be the local address of the machine. Typically `127.0.0.1`
 ##### Retrieve Chat History
 
 - URL: `{{server_url}}:8000/chat/{{room_id}}/`
-  `room_id`: Name of room provided upon websocket connection
+
+`room_id`: Name of room provided upon websocket connection
+
 - Method: GET
 - Header:
   Key: Authorization
@@ -41,7 +43,9 @@ Server IP would be the local address of the machine. Typically `127.0.0.1`
 ##### Mark as Read
 
 - URL: `{{server_url}}:8000/chat/read/{{room_id}}/`
-  `room_id`: Name of room provided upon websocket connection
+
+`room_id`: Name of room provided upon websocket connection
+
 - Method: PATCH
 - Header
   Key: Authorization
